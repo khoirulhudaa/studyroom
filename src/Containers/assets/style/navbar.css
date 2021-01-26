@@ -1,0 +1,82 @@
+.navbarz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    font-weight: 500;
+    color: black;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    font-family: 'Raleway';
+    box-shadow: 0 0 20px lightgrey;
+    transition: 0.5s;
+}
+
+.navbarz-dark {
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+.mode {
+    position: absolute;
+    left: -260px;
+    width: 180px;
+    height: auto;
+    border: 3px solid rgb(96, 13, 230);
+    border-radius: 90px;
+    padding: 2px;
+    z-index: 99;
+    background-color: #fff;
+    display: flex;
+}
+
+.mode i {
+    position: relative;
+    top: 6.5px;
+    color: white;
+    font-size: 26px;
+}
+
+.btn-mode {
+    position: relative;
+    text-align: center;
+    border-radius: 90px;
+    background-color: rgb(96, 13, 230);
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-mode2 {
+    position: relative;
+    text-align: center;
+    border-radius: 90px;
+    background-color: rgb(79, 75, 85);
+    width: 40px;
+    height: 40px;
+    left: 90px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-mode-show {
+    position: relative;
+    left: 90px;
+    transition: 0.5s;
+}
+
+@media(max-width: 840px) {
+    .navbar {
+        display: none;
+    }
+
+    .wrp {
+        display: none;
+    }
+ }

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;0,800;1,100;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(189, 189, 189);
+    border-radius: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.card-langkah-1 {
+    position: relative;
+    transform: translate(0%, 22%);
+    margin: auto;
+    width: 33%;
+    text-align: center;
+    z-index: 2;
+    border-radius: 12px;
+    box-shadow: 0 0 20px lightgrey;
+    font-family: 'Raleway';
+    background-color: #fff;
+    padding: 60px 30px 100px 30px;
+    height: auto;
+    display: block
+}
+
+
+.list-button {
+    display: block;
+}
+
+.card-langkah-1 small {
+
+    font-weight: bold;
+}
+
+.bt-langkah {
+    border: 3px solid rgb(96, 13, 230);
+    background-color: rgb(96, 13, 230);
+    border-radius: 6px;
+    font-weight: 500;
+    color: white;
+    padding: 10px;
+    width: 70%;
+    margin: 20px;
+    transition: 0.6s;
+}
+
+.bt-langkah:hover {
+    transition: 0.6s;
+    transform: scale(0.95);
+    color: white;
+}
+
+.circles {
+    position: absolute;
+    bottom: -200px;
+    right: -100px;
+}
+
+.circles2 {
+    position: absolute;
+    top: -100px;
+    left: -130px;
+}
+
+.bt-batal, .bt-kirim {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(96, 13, 230);
+    color: rgb(96, 13, 230);
+    font-weight: 500;
+    transition: 0.6s;
+    padding: 10px 40px;
+}
+
+.bt-kirim {
+    background-color: rgb(96, 13, 230);
+    color: white;
+}
+
+.bt-batal:hover, .bt-kirim:hover {
+    transition: 0.6s;
+    transform: scale(0.96);
+    color: white;
+    background-color: rgb(96, 13, 230);
+}
+
+.mdl {
+    transform: scale(1);
+    margin-top: 0px;
+}
+
+.form-controls {
+    position: relative;
+    margin-top: 30pX;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgb(104, 104, 104);
+    outline: none;
+}
+
+.bt-masuks {
+    position: relative;
+    top: -5px;
+    left: 77px;
+    border: 3px solid rgb(96, 13, 230);
+    background-color: transparent;
+    border-radius: 6px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 40%;
+    margin: 0px 0px;
+    transform: scale(0.7);
+    transition: 0.6s;
+}
+
+.bt-masuks2:hover {
+    color: white;
+}
+
+.bt-masuks2 {
+    background-color: rgb(96, 13, 230);
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.modal-title {
+    position: absolute;
+    width: 50%;
+}
+
+.list-button2 {
+    position: relative;
+    left: 65%;
+    width: 50%;
+}
+
+/* .bt-masuks:focus {
+    background-color: rgb(96, 13, 230);
+    color: #fff;
+    outline: none;
+    border: none;
+} */
+
+/* 
+.form-controls:focus {
+    transition: 0.6s;
+    margin-top: 30pX;
+    outline: none;
+    animation: inp 0.6s 1;
+    border-bottom: 2px solid blue;
+} */
+
+@keyframes inp {
+    0% {
+        width: 10%;
+        margin-top: 30pX;
+        margin: auto;
+    }
+    100% {
+        margin-top: 30pX;
+        width: 100%;
+    }
+}
+
+@media(max-width: 840px) {
+    .navbar {
+        display: none;
+    }
+ }

@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* border: 3px solid rgb(96, 13, 230);
+background-color: rgb(96, 13, 230); */
+/* font-family: 'Raleway'; */
+/* color: rgb(96, 13, 230); */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(104, 18, 185);
+    border-radius: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: 'Raleway';
+    height: auto;
+    box-shadow: 0 0 20px lightgrey;
+    background-color: #fff;
+    display: flex;
+    padding: 10px 80px 0px 80px;
+    z-index: 999;
+}
+
+.navbar h2 {
+    color: rgb(96, 13, 230);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 2px 10px;
+    list-style: none;
+    font-weight: bold;
+    transition: 0.5s;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid rgb(96, 13, 230);
+    color: rgb(96, 13, 230);
+}
+
+.navbar ul li:hover {
+    transition: 0.5s;
+    transform: scale(0.96);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid rgb(96, 13, 230);
+    background-color: rgb(96, 13, 230);
+    color: white;
+}
+
+.tugas-li {
+    position: relative;
+    background-color: rgb(96, 13, 230);
+    color: white;
+}
+
+.sec-tambah-tugas {
+    position: relative;
+    font-family: 'Raleway';
+    top: 180px;
+    padding: 45px;
+    box-shadow: 0 0 20PX lightgrey;
+    margin: 0 auto 100px auto;
+    width: 90%;
+    height: 0px;
+    opacity: 0;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+}
+
+.updateLencana {
+    position: fixed;
+    z-index: 989;
+    font-family: 'Raleway';
+    top: 0px;
+    left: -30%;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: transparent;
+    box-shadow:  0 0 10px rgba(88, 88, 88, 0.404);
+    background-color: #fff;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.updateLencana-show {
+    position: fixed;
+    transition: 0.5s;
+    left: 0%;
+}
+
+.from {
+    position: relative;
+    margin-top: 40%;
+}
+
+.sec-tambah-tugas-show {
+    opacity: 1;
+    color: rgb(19, 19, 19);
+    height: auto;
+}
+
+.content-tugas {
+    width: 35%;
+    margin: 20px auto 0 auto;
+    padding-top: 3px;
+}
+
+.form {
+    margin: auto;
+}
+
+.list-opsi {
+    position: absolute;
+    right: 20px;
+}
+
+.list-opsi i {
+    margin: 0 10px;
+}
+
+#timex {
+    background-color: rgb(218, 26, 26);
+    box-shadow: 0 0 10px rgba(46, 46, 46, 0.26);
+    color: rgb(255, 253, 253);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#pen {
+    transition: 0.5s;
+}
+
+#timex:hover {
+    top: -0.6px;
+    background-color: rgb(218, 26, 26);
+    box-shadow: 0 0 10px rgba(46, 46, 46, 0.26);
+    color: rgb(255, 253, 253);
+    transition: 0.5s;
+    transform: scale(0.93);
+}
+
+#pen:hover {
+    top: -0.6px;
+    box-shadow: 0 0 10px rgba(46, 46, 46, 0.26);
+    color: rgb(255, 253, 253);
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(0.93);
+}
+
+.bt-submit2 {
+    position: relative;
+    top: 2px;
+    margin-top: 20px;
+    border: 3px solid rgb(96, 13, 230);
+    background-color: rgb(96, 13, 230);
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 160px;
+    outline: none;
+    transition: 0.5s;
+}
+
+li {
+    list-style: none;
+}
+
+.bt-submit2:hover {
+    outline: none;
+    transform: scale(0.96);
+    transition: 0.5s;
+    color: white;
+}
+
+.sec-tambah-tugas img {
+    height: 250px;
+    width: 250px;
+}
+
+.sec-tugas-img2 {
+    position: relative;
+    top: 140px;
+    display: flex;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+    height: auto;
+    font-family: 'Raleway';
+    padding: 40px;
+    box-shadow: 0 0 20px lightgrey;
+}
+
+.content-swipper {
+    width: 30%;
+}
+
+.list-bantuan {
+    width: 25%;
+    padding: 0px 30px;
+}
+
+.img-swipper2 {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    font-family: 'Raleway';
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: url('../images/dekorasi/auth.png');
+    background-repeat: repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.img-swipper2 h2 {
+    width: 50%;
+}
+
+.namaMurid {
+    font-weight: 500;
+    font-size: 21px;
+}
+
+.list-nama {
+    display: flex;
+}
+
+.lencana {
+    position: relative;
+    top: 4px;
+    background-color: rgb(22, 223, 179);
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 3px 9px;
+    height: 100%;
+    margin: 0 20px;
+}
+
+.list-bantuan li {
+    position: relative;
+    left: -30px;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 0 20px lightgrey;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: bold;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.list-bantuan li:hover {
+    transition: 0.6s;
+    transform: scale(0.97);
+    box-shadow: none;
+    background-color: rgb(96, 13, 230);
+    color: white;
+}
+
+.bt-tugasz {
+    position: relative;
+    margin-top: 60px;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(252, 252, 252);
+    border-radius: 6px;
+    color: rgb(17, 17, 17);
+    font-weight: bold;
+    padding: 10px;
+    width: 160px;
+    outline: none;
+    transition: 0.5s;
+}
+
+.bt-lose {
+    position: relative;
+    margin-top: 60px;
+    background-color: rgb(96, 13, 230);
+    border-radius: 6px;
+    color: rgb(241, 241, 241);
+    font-weight: bold;
+    padding: 10px 40px;
+    width: auto;
+    outline: none;
+    transition: 0.5s;
+}
+
+.bt-lose:hover {
+    transition: 0.5s;
+    color: white;
+    transform: scale(0.95);
+}
+
+.bt-tugasz:hover {
+    transition: 0.5s;
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+.la-angle-down {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    z-index: 666;
+    cursor: pointer;
+    border: 3px solid rgb(96, 13, 230);
+    background-color: transparent;
+    color: rgb(96, 13, 230);
+    transition: 0.5s;
+    border-radius: 90px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.la-angle-down-rotate {
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+.la-angle-down:hover {
+    transition: 0.5s;
+    transform: scale(0.95);
+}
+
+.list-tugas-post, .list-tugas-post2 {
+    position: relative;
+    top: 135px;
+    font-family: 'Raleway';
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 20px lightgrey;
+    margin: 60px auto 0px auto;
+    padding: 30px;
+    display: block;
+    flex-wrap: wrap;
+    transition: 0.5s;
+}
+
+.spinner {
+    position: absolute;
+    top: 15px;
+    left: 85%;
+    font-size: 10px;
+}
+
+.list-tugas-post-show {
+    transition: 0.5s;
+    height: 90px;
+}
+
+.la-sign-out-alt {
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: rgb(241, 2, 2);
+    color: white;
+    height: 100%;
+    padding: 5px;
+    transition: 0.5s;
+    margin: 0 10px;
+}
+
+.la-award {
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 30px;
+    text-align: center;
+    height: 100%;
+    padding: 5px;
+    background-color: rgb(22, 223, 179);
+    margin: 0 10px;
+    transition: 0.5s;
+    z-index: 44;
+}
+
+.la-sign-out-alt:hover, .la-award:hover {
+    transition: 0.5s;
+    transform: scale(1.15);
+}
+
+.jk {
+    position: relative;
+    top: 140px;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    opacity: 0;
+}
+
+.chd {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 60px;
+    background-color: #fff;
+    transform: scale(1);
+    box-shadow: 0 0 20px lightgrey;
+    display: flex;
+    margin: 50px 0 0px 0;
+    text-align: left;
+    padding: 10px 30px;
+    line-height: 6px;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.chd i {
+    position: relative;
+    top: 7px;
+}
+
+.chd h3 {
+    position: relative;
+    left: -10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.list-tugas-post .la-pen, .la-times, .la-trash {
+    background-color: rgb(96, 13, 230);
+    color: white;
+    border-radius: 90px;
+    padding: 8px;
+    font-size: 30px;
+}
+
+.form-groups div {
+    margin: 10px;
+}
+
+.tepat2 {
+    background-color: rgb(13, 240, 209);
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 2px 10px;
+    font-weight: 500;
+}
+
+.tepat {
+    background-color: rgb(252, 227, 5);
+    color: rgb(78, 78, 78);
+    border-radius: 30px;
+    padding: 2px 10px;
+    font-weight: 500;
+}
+
+.sec-kategori-nilai2 {
+    position: relative;
+    top: 180px;
+    left: -80px;
+    width: 80%;
+    height: auto;
+    font-family: 'Raleway';
+    margin: auto;
+    padding: 20px 20px 20px 0px;
+    display: flex;
+    background-color: transparent;
+}
+
+.sec-kategori-nilai2 .wrap-nilai {
+    width: 100%;
+    display: flex;
+}
+
+.sec-kategori-nilai2 .form-group {
+    margin: 0 10px;
+    width: 30%;
+}
+
+.la-calendar-alt {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(96, 13, 230);
+    color: rgb(96, 13, 230);
+    border-radius: 90px;
+    padding: 8px;
+    font-size: 28px;
+}
+
+.content-list-tugas {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@media(max-width: 840px) {
+    .navbar {
+        display: none;
+    }
+  
+    .list-bantuan {
+        display: none;
+    }
+ }

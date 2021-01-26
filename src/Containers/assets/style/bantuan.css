@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;0,800;1,100;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* border: 3px solid rgb(96, 13, 230);
+background-color: rgb(96, 13, 230); */
+/* font-family: 'Raleway'; */
+/* color: rgb(96, 13, 230); */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(104, 18, 185);
+    border-radius: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sec-bantuan {
+    position: relative;
+    top: 130px;
+    width: 90%;
+    box-shadow: 0 0 20px lightgrey;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin: auto;
+    height: auto;
+    font-family: 'Raleway';
+    border-radius: 10px;
+    display: flex;
+}
+
+.bt-selengkapnya2 {
+    position: relative;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    width: 160px;
+    outline: none;
+    transition: 0.5s;
+    transition: 0.6s;
+}
+
+.bt-selengkapnya2:hover {
+    transition: 0.6s;
+    transform: scale(0.96);
+}
+
+.list-bantuan {
+    width: 25%;
+    padding: 0px 30px;
+}
+
+.list-bantuan a {
+    color: black;
+    text-decoration: none;
+}
+
+.list-bantuan h3 {
+    width: 200px;
+}
+
+.list-bantuan li {
+    position: relative;
+    left: -30px;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 0 20px lightgrey;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: bold;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.list-bantuan li:hover {
+    transition: 0.6s;
+    transform: scale(0.97);
+    box-shadow: none;
+    background-color: rgb(96, 13, 230);
+    color: white;
+}
+
+.bt-tugasz {
+    position: relative;
+    margin-top: 40px;
+    border: none;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(246, 245, 247);
+    border-radius: 6px;
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+    padding: 10px;
+    width: 160px;
+    transition: 0.6s;
+    transition: 0.6s;
+}
+
+.wrap-sec-1{
+    position: relative;
+    margin: 0px auto 35px auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    padding: 20px 0px;
+}
+
+.wrap-sec-1 section {
+    margin: 25px 25px 0px 25px;
+}
+
+.img-swipper3 {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    font-family: 'Raleway';
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: url('../images/dekorasi/hosting.png');
+    background-repeat: repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.img-swipper3 h2 {
+    width: 50%;
+}
+
+.contentx {
+    line-height: 20px;
+}
+
+.swipper-bantuan h2 {
+    width: 60%;
+    text-shadow: 0 0 20px rgb(36, 36, 36);
+}
+
+.swipper-bantuan p {
+    width: 60%;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.pendaftaran, .penggunaan, .permasalahan, .pertanyaan {
+    position: relative;
+    display: flex;
+    top: 150px;
+    width: 80%;
+    font-family: 'Raleway';
+    margin: 30px auto;
+    height: auto;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.212);
+    border-radius: 10px;
+    padding: 30px 60px;
+}
+
+.card-header {
+    background-color: #fff;
+}
+
+.icons-bantuan {
+    width: 35%;
+    padding: 20px;
+}
+
+.icons-bantuan i {
+    position: relative;
+    left: -30px;
+    top: 0px;
+    font-size: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(96, 13, 230);
+    color: rgb(96, 13, 230);
+    border-radius: 90px;
+    padding: 12px;
+}
+
+.bt-pelajari1 {
+    position: relative;
+    margin-top: 10px;
+    border: 3px solid rgb(96, 13, 230);
+    background-color: rgb(96, 13, 230);
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 160px;
+    transition: 0.6s;
+    transition: 0.6s;
+}
+
+.bt-pelajari1:hover {
+    transition: 0.6s;
+    color: white;
+    transform: scale(0.96);
+}
+
+.sec-input {
+    position: relative;
+    top: 150px;
+    z-index: 777;
+    width: 70%;
+    height: auto;
+    margin: 30px auto 0px auto;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(219, 219, 219);
+    border-radius: 30px;
+    padding: 15px 10px 0px 10px;
+}
+
+.sec-input button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.la-telegram {
+    font-size: 29px;
+    background-color: rgb(96, 13, 230);
+    color: white;
+    border-radius: 90px;
+    padding: 10px;
+}
+.hdn {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: darkgreen;
+}
+
+.ss {
+    position: relative;
+    opacity: 0;
+    top: 130px;
+    height: 30px;
+    width: 100%;
+}
+
+@media(max-width: 840px) {
+    .navbar {
+        display: none;
+    }
+
+    .list-bantuan {
+        display: none;
+    }
+ }
