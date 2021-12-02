@@ -316,6 +316,14 @@ html {
     opacity: 0;
 }
 
+.ups {
+    font-size: 19px;
+    opacity: 0.8;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .popup-show {
     position: fixed;
     transition: 0.8s;

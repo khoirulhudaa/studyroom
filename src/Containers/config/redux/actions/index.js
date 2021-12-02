@@ -178,6 +178,7 @@ export const addKomenBaru = (data) => (dispatch) => {
 export const getDataKomen = (data) => (dispatch) => {
     const getData = database.ref('/tugas/komentar');
     return new Promise((resolve) => {
+        if(!getData == null || getData.length > 0)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {
@@ -196,6 +197,7 @@ export const getDataFirestoreMurid = (data) => (dispatch) => {
         const dataLogins = JSON.parse(localStorage.getItem('loginData'));
         let arrayFs = [];
         const docRef = firestore.collection('usersCollection').doc(dataLogins.status);
+        if(!docRef == null || docRef.length > 0)
         docRef.get().then(function (doc) {
             arrayFs.push({
                 data: doc.data()
@@ -273,6 +275,7 @@ export const addDataLike = (data) => (dispatch) => {
 export const getDataLike = (data) => (dispatch) => {
     const getData = database.ref('/tugas/like');
     return new Promise((resolve) => {
+        if(!getData == null || getData.length > 0)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {
@@ -288,41 +291,44 @@ export const getDataLike = (data) => (dispatch) => {
 
 export const addDataNilai = (data) => (dispatch) => {
     return new Promise((resolve, reject) => {
-        database.ref('/tugas/nilai').push({
-            nama_mapel: data.dataz.nama_mapel,
-            judul_tugas: data.dataz.judul_tugas,
-            kode_kelas: data.dataz.kode_kelas,
-            id_guru: data.dataz.id_guru,
-            nama_murid: data.dataz.nama_murid,
-            nama_guru: data.dataz.nama_guru,
-            nilai_tugas: data.dataz.nilai_tugas,
-        })
+            database.ref(`/tugas/nilai/`).push({
+                nama_mapel: data.dataz.nama_mapel,
+                judul_tugas: data.dataz.judul_tugas,
+                kode_kelas: data.dataz.kode_kelas,
+                id_guru: data.dataz.id_guru,
+                nama_murid: data.dataz.nama_murid,
+                nama_guru: data.dataz.nama_guru,
+                nilai_tugas: data.dataz.nilai_tugas,
+                id_mengumpulkan: data.dataz.id_mengumpulkan,
+            })
             .then(res => {
                 resolve(true);
             })
             .catch(err => {
                 reject(false)
             })
-    })
-}
+        })
+    }
 
-export const addDataNilai2 = (data) => (dispatch) => {
-    return new Promise((resolve, reject) => {
-        database.ref('/nilai/list').push({
-            nama_mapel: data.dataz.nama_mapel,
-            judul_tugas: data.dataz.judul_tugas,
-            kode_kelas: data.dataz.kode_kelas,
-            id_guru: data.dataz.id_guru,
-            nama_guru: data.dataz.nama_guru,
-        })
-            .then(res => {
-                resolve(true);
-            })
-            .catch(err => {
-                reject(false)
-            })
-    })
-}
+// export const addDataNilai2 = (data) => (dispatch) => {
+//     return new Promise((resolve, reject) => {
+//         database.ref(`/nilai/list/` + data.dataz2.id_list).push({
+//             nama_mapel: data.dataz2.nama_mapel,
+//             judul_tugas: data.dataz2.judul_tugas,
+//             kode_kelas: data.dataz2.kode_kelas, 
+//             id_guru: data.dataz2.id_guru,
+//             nama_guru: data.dataz2.nama_guru,
+//             id_mengumpulkan: data.dataz2.id_mengumpulkan,
+//             id_list: data.dataz2.id_list
+//         })
+//             .then(res => {
+//                 resolve(true);
+//             })
+//             .catch(err => {
+//                 reject(false)
+//             })
+//     })
+// }
 
 export const deleteTugas = (data) => (dispatch) => {
     return new Promise((resolve, reject) => {
@@ -338,6 +344,14 @@ export const deleteNilai = (data) => (dispatch) => {
     })
 }
 
+// export const deleteNilai2 = (data) => (dispatch) => {
+//     return new Promise((resolve, reject) => {
+//         console.log('ya2 :', data.id_list)
+//         const urlDatas = database.ref(`/nilai/list/` + data.id_list)
+//         urlDatas.remove()
+//     })
+// }
+
 export const deleteTugasKirim = (data) => (dispatch) => {
     return new Promise((resolve, reject) => {
         const urlTugass = database.ref(`/tugas/terkirim/${data.aid}`);
@@ -348,6 +362,7 @@ export const deleteTugasKirim = (data) => (dispatch) => {
 export const getDataTugas = (data) => (dispatch) => {
     const getData = database.ref('/tugas/postingan');
     return new Promise((resolve) => {
+        if(!getData == null || getData)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {
@@ -423,6 +438,7 @@ export const updateLencana = (data) => (dispatch) => {
 export const getDataTugasKirim = (data) => (dispatch) => {
     const getData = database.ref('/tugas/terkirim');
     return new Promise((resolve) => {
+        if(!getData == null || getData.length > 0)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {
@@ -439,6 +455,7 @@ export const getDataTugasKirim = (data) => (dispatch) => {
 export const getDataNilai = (_data) => (dispatch) => {
     const getData = database.ref('/tugas/nilai');
     return new Promise((resolve) => {
+        if(!getData == null || getData)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {
@@ -455,6 +472,7 @@ export const getDataNilai = (_data) => (dispatch) => {
 export const getDataNilai2 = (data) => (dispatch) => {
     const getData = database.ref('/nilai/list');
     return new Promise((resolve) => {
+        if(!getData == null || getData)
         getData.on('value', (snapshot) => {
             const array = [];
             Object.keys(snapshot.val()).map(key => {

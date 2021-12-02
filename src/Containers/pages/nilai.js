@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactToExcel from 'react-html-table-to-excel';
-import { getDataTugasKirim, addDataNilai, updateNilaiTUgas, getDataKelasStart, getDataNilai, getDataTugas, getDataNilai2, addDataNilai2, deleteNilai } from '../config/redux/actions';
+import { getDataTugasKirim, addDataNilai, updateNilaiTUgas, getDataKelasStart, getDataNilai, getDataTugas, getDataNilai2, deleteNilai } from '../config/redux/actions';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
 import ListMapel2 from './listMapel2';
 import ListJudulTugas from '../component/listJudulTugas';
 import '../assets/style/nilai.css';
+import { SettingsSystemDaydreamOutlined } from '@material-ui/icons';
 
 class Nilai extends React.Component {
 
@@ -22,11 +23,37 @@ class Nilai extends React.Component {
         kode_kelas: '',
         id_guru2: '',
         detect: false,
-        aid: ''
+        aid: '',
+        ok: [],
+        id_mengumpulkan: ''
     }
 
     componentDidMount() {
 
+        setInterval(() => {
+
+        this.setState({
+            ok: this.props.nilaiTugas
+        })
+    
+        for(let i = 0; i < this.state.ok.length; i++){
+            
+            for(let j = 1; j < this.state.ok.length; j++){
+    
+                if(!(i === j) && this.state.ok[i].data?.judul_tugas === this.state.ok[j].data?.judul_tugas){
+    
+                    this.state.ok[i].data = "";
+    
+                }
+            }
+        } 
+    
+        this.setState({
+            ok : this.state.ok.filter(e => e !== "")
+        }) 
+
+    }, 3000)
+        
         const namaKelas = JSON.parse(localStorage.getItem('dataKelasStart'));
 
         this.setState({
@@ -44,19 +71,58 @@ class Nilai extends React.Component {
         console.log('data tugas terkirim :', this.props.tugasKelasKirim)
 
         this.state.no = 1;
-
     }
+
 
     valueChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+
+    }
+
+    valueChanges2 = (e) => {
+
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+
+        localStorage.setItem('nilai', this.props.nilaiTugas)
+
+        console.log('ok :', this.props.nilaiTugas)
+     
+        for(let i = 0; i < this.state.ok.length; i++){
+    
+            for(let j = 1; j < this.state.ok.length; j++){
+    
+                if(!(i === j) && this.state.ok[i].data?.judul_tugas === this.state.ok[j].data?.judul_tugas){
+    
+                    this.state.ok[i].data = "";
+    
+                }
+            }
+        } 
+    
+        this.setState({
+            ok : this.state.ok.filter(e => e !== "")
+        }) 
+    
+        console.log('bawah :', this.state.ok)
+
     }
 
     masukanNilai = async (data1) => {
 
         const { addDataNilai, addDataNilai2 } = this.props;
         const datas = JSON.parse(localStorage.getItem('dataKelasStart'));
+
+        var results3 = '';
+        var characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZatuvwxyz123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < 5; i++) {
+            results3 += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
         const dataz = {
             nama_mapel: this.state.nama_mapel_list,
             judul_tugas: this.state.judul_tugas,
@@ -65,12 +131,12 @@ class Nilai extends React.Component {
             nama_murid: this.state.nama_murid,
             nama_guru: datas.nama_guru,
             nilai_tugas: this.state.nilai_tugas,
+            id_mengumpulkan: results3,
         }
 
         const data = await addDataNilai({ dataz });
-        const data2 = await addDataNilai2({ dataz });
-
-        if (data && data2) {
+        
+        if (data) {
             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -82,17 +148,12 @@ class Nilai extends React.Component {
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                 }
             })
-
+            
             Toast.fire({
                 icon: 'success',
                 title: `Nilai untuk ${this.state.nama_murid} telah masuk`
             })
-
-            this.setState({
-                nama_mapel_list: '',
-                judul_tugas: '',
-                nilai_tugas: ''
-            })
+           
 
         } else {
             const Toast = Swal.mixin({
@@ -118,10 +179,17 @@ class Nilai extends React.Component {
         const { deleteNilai } = this.props;
 
         const data = {
-            aid: datas.id
+            aid: datas.id,
+            id_guru: datas.data.id_guru,
+            id_mengumpulkan: datas.data.id_mengumpulkan,
+            judul_tugas: datas.data.judul_tugas,
+            kode_Kelas: datas.data.kode_Kelas,
+            nama_guru: datas.data.nama_guru,
+            nama_mapel: datas.data.nama_mapel,
+            id_list: datas.data.id_list
         }
 
-        const hapus = await deleteNilai(data);
+        const hapus = deleteNilai(data);
 
         if (hapus) {
             const Toast = Swal.mixin({
@@ -138,8 +206,9 @@ class Nilai extends React.Component {
 
             Toast.fire({
                 icon: 'success',
-                title: `Nilai untuk ${data.data.nama_murid} telah dihapus`
+                title: `Nilai untuk ${datas.data.nama_murid} telah dihapus`
             })
+
         } else {
             const Toast = Swal.mixin({
                 toast: true,
@@ -155,7 +224,7 @@ class Nilai extends React.Component {
 
             Toast.fire({
                 icon: 'warning',
-                title: `Nilai untuk ${data.data.nama_murid} gagal dihapus`
+                title: `Nilai untuk ${datas.data.nama_murid} gagal dihapus`
             })
         }
     }
@@ -254,13 +323,12 @@ class Nilai extends React.Component {
 
     render() {
 
-        const { valueChange, masukanNilai, deleteNilais, updateNilai, masukanDataUpdateNilai, batalUpdateNilai } = this;
+        const { valueChange, valueChanges2, masukanNilai, deleteNilais, updateNilai, masukanDataUpdateNilai, batalUpdateNilai } = this;
         const { nilai_tugas, nama_mapel, nama_murid, judul_tugas, nama_mapel_list, judul_tugas_list, nama_kelas_list, kode_kelas, id_guru2, detect } = this.state;
-        console.log('data nilai terkirim :', this.props.listNilaiTugas)
+        console.log('data nilai tugas :',this.props.nilaiTugas)
 
         return (
             <div>
-
                 <section className="navbar">
                     <div>
                         <a href="/"><h2>studyROOMS - lIVE</h2></a>
@@ -343,17 +411,22 @@ class Nilai extends React.Component {
                         <div className="wrap-nilai">
                             <div className="form-group">
                                 <label htmlFor="message-text" className="col-form-label label">Nama mapel</label>
-                                <ListMapel2 namaMapel2={this.state.nama_mapel_list} valueChange2={valueChange} />
+                                <ListMapel2 namaMapel2={this.state.nama_mapel_list} valueChange2={valueChanges2} />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="message-text" className="col-form-label label">Judul tugas</label>
                                 <select name="judul_tugas_list" value={judul_tugas_list} className="form-control" onChange={valueChange}>
                                     <option value="default">Judul tugas</option>
                                     {
-                                        this.props.listNilaiTugas.map((data, index) => {
-                                            if (data.data.kode_kelas === this.state.kode_kelas && data.data.id_guru === this.state.id_guru2 && data.data.nama_mapel === this.state.nama_mapel_list) {
+                                        this.state.ok.map((data, index) => {
+                                            if (data.data.nama_mapel === this.state.nama_mapel_list &&
+                                                data.data.kode_kelas === this.state.kode_kelas &&
+                                                data.data.id_guru === this.state.id_guru2 
+                                                ) {
                                                 return (
-                                                    <option key={index} value={data.data.judul_tugas}>{data.data.judul_tugas}</option>
+                                                    <option key={index} value={data.data.judul_tugas}>
+                                                        {data.data.judul_tugas}
+                                                    </option>
                                                 )
                                             }
                                         })
@@ -377,7 +450,7 @@ class Nilai extends React.Component {
                             </tr>
                         </thead>
                         {
-                            this.props.nilaiTugas.map((data, index) => {
+                            this.state.ok.map((data, index) => {
                                 if (data.data.nama_mapel === nama_mapel_list && data.data.judul_tugas === judul_tugas_list) {
                                     return (
                                         <tbody key={index}>
@@ -423,7 +496,6 @@ const getActionRedux = (dispatch) => {
         addDataNilai: (data) => dispatch(addDataNilai(data)),
         getDataNilai: (data) => dispatch(getDataNilai(data)),
         getDataNilai2: (data) => dispatch(getDataNilai2(data)),
-        addDataNilai2: (data) => dispatch(addDataNilai2(data)),
         deleteNilai: (data) => dispatch(deleteNilai(data)),
         getDataTugas: (data) => dispatch(getDataTugas(data)),
         updateNilaiTUgas: (data) => dispatch(updateNilaiTUgas(data)),

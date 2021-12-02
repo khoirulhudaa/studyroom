@@ -740,32 +740,7 @@ class Kelas extends React.Component {
                                         }
                                     })
                                 ) :
-                                    <div>
-                                        <div>
-                                            <div className="child-tugas">
-                                                <div>
-                                                    <i className="las la-pen"></i>
-                                                </div>
-                                                <div>
-                                                    <h3><span className="guruX">Pak wawan memposting</span> tugas - Pemrograman dasar-4</h3>
-                                                    <small>Batas waktu : 19/03/2020</small>
-                                                </div>
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <div>
-                                            <div className="child-tugas">
-                                                <div>
-                                                    <i className="las la-pen"></i>
-                                                </div>
-                                                <div>
-                                                    <h3><span className="guruX">Pak wawan memposting</span> tugas - Pemrograman dasar-4</h3>
-                                                    <small>Batas waktu : 19/03/2020</small>
-                                                </div>
-                                            </div>
-                                            <br />
-                                        </div>
-                                    </div>
+                                   <h2 className="ups">Upss...Masih belum ada tugas</h2>
                             }
 
                         </div>

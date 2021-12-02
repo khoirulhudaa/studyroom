@@ -116,7 +116,7 @@ class listMapel extends React.Component {
                     <option value="#">Pilih mapel</option>
                     <option value="Bahasa Indonesia">Bahasa Indonesia</option>
                     <option value="Bahasa Inggris">Bahasa Inggris</option>
-                    <option value="PAI">PAI</option>
+                    <option value="PDTI">PDTI</option>
                     <option value="Kewarganegaraan">Kewarganegaraan</option>
                     <option value="Kewirausahaan">Kewirausahaan</option>
                     <option value="Ilmu Pengatahuan Dasar">Ilmu Pengatahuan Dasar</option>

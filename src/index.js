@@ -4,19 +4,18 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../src/App/App';
 import * as serviceWorker from './serviceWorker';
-// import {createStore} from 'redux';
-// import {Provider} from 'react-redux';
-// import rootReducer from './redux/reducer/reducerGlobal';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import rootReducer from './Containers/config/redux/reducer/reducerGlobal';
 
-// store
-// const store = createStore(rootReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
-    // <Provider store={store}>
+    <Provider store={store}>
     <React.StrictMode>
       <App />
   </React.StrictMode>
-    // </Provider>
+    </Provider>
     ,
   document.getElementById('root')
 );

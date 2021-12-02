@@ -3,7 +3,6 @@ import firebase, { storage, firestore, database } from '../config/firebase/fire'
 import { addDataTugas, getDataTugas, deleteTugas, updateTugas, getDataTugasKirim, getDataNilai, deleteTugasKirim } from '../config/redux/actions';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
-import { Spinner } from 'reactstrap';
 import ListMapel from './listMapel';
 import ListMapel3 from './listMapel3';
 import '../assets/style/tugas.css';
@@ -862,8 +861,8 @@ class Tugas extends React.Component {
                             })
                         ) :
                             <div className="spinner">
-                                <Spinner /> Cek tugas...
-                            </div>
+                                Belum ada postingan tugas
+                            </div>  
                     }
 
 
@@ -925,7 +924,7 @@ class Tugas extends React.Component {
                             })
                         ) :
                             <div className="spinner">
-                                <Spinner /> Cek tugas...
+                                Belum ada yang mengumpulkan
                             </div>
                     }
                 </section>

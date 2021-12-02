@@ -21,7 +21,7 @@ class Utama extends Component {
     username: '',
     email: '',
     password: '',
-    registerSuccess: false
+    registerSuccess: false,
   }
 
   componentDidMount() {
